@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head"); %>
+  </head>
+
+  <body>
+    <section class="offer">
+      <div class="container">
+        <div class="container my-5">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 py-3">
+              <img
+                src="/media/<%= data.image %>"
+                class="img-fluid"
+                alt="package-image"
+                width="400px"
+                height="400px"
+              />
+            </div>
+            <div class="col-md-6 col-md-6 py-1">
+              <h3 class="display-6"><%= data.name %></h3>
+              <p class="fs-5 my-4">
+                de la <span class="price"><%= data.price %>€ </span>
+              </p>
+              <p class="lead"><%= data.description %></p>
+              <a href="#" class="btn btn-info">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include("../partials/footer"); %>
+  </body>
+</html>

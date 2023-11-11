@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head"); %>
+  </head>
+
+  <body>
+    <section class="header">
+      <a href="/" class="logo">
+        <img src="/media/logo.png" alt="logo" width="140px" height="80px" />
+      </a>
+      <input id="burger" type="checkbox" />
+      <label for="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav>
+        <ul>
+          <li><a href="/package">Packages</a></li>
+          <li><a href="/management">Management Packages</a></li>
+        </ul>
+      </nav>
+    </section>
+    <section class="package">
+      <div class="row">
+        <div class="col-xs-12 center-container">
+          <video class="d-block w-100" autoplay loop muted>
+            <source src="/media/package.mp4" type="video/mp4" />
+          </video>
+          <div class="center-text">
+            <h1>PACKAGES</h1>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <% data.forEach(package => { %>
+          <div class="col">
+            <div class="card h-100">
+              <div class="container-img">
+                <a href="/offer/<%= package.id %>"
+                  ><img
+                    src="/media/<%= package.image %>"
+                    class="card-img-top"
+                    alt="package-image"
+                /></a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title fw-bold"><%= package.name %></h5>
+                <div class="text-right">
+                  de la <span class="price"><%= package.price %>€ </span>
+                </div>
+                <a href="#" class="btn-link">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+    <%- include("../partials/footer"); %>
+  </body>
+</html>
